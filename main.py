@@ -42,7 +42,8 @@
 #     """
 
 import streamlit as st
-import PyPDF2
+import pypdf
+
 
 st.set_page_config(page_title="Chat with your PDF", page_icon="📄")
 
@@ -82,4 +83,5 @@ if uploaded_file is not None:
 #     import uvicorn
 
 #     uvicorn.run("main:app", host="127.0.0.1", port=8001, reload=True)
+
 
