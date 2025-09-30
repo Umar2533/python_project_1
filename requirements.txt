@@ -1,5 +1,7 @@
 streamlit
-git+https://github.com/py-pdf/pypdf
+PyPDF2==3.0.1
+
+
 
 
 
