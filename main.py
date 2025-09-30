@@ -1,16 +1,14 @@
 import streamlit as st
-from pypdf import PdfReader   # ✅ pypdf se import
+import PyPDF2   # ✅ ab PyPDF2 use karenge
 
 st.set_page_config(page_title="Chat with your PDF", page_icon="📄")
 
 st.title("📄 Chat with your PDF (Simple Version)")
 
-# File uploader
 uploaded_file = st.file_uploader("Upload your PDF", type=["pdf"])
 
 if uploaded_file is not None:
-    # Read PDF
-    reader = PdfReader(uploaded_file)
+    reader = PyPDF2.PdfReader(uploaded_file)
     text = ""
     for page in reader.pages:
         if page.extract_text():
@@ -18,11 +16,9 @@ if uploaded_file is not None:
 
     st.success("✅ PDF Uploaded & Text Extracted")
 
-    # Show preview of extracted text
     with st.expander("Preview Extracted Text"):
-        st.write(text[:2000])  # sirf pehle 2000 characters show
+        st.write(text[:2000])
 
-    # Query box
     query = st.text_input("Ask something about the PDF:")
 
     if query:
