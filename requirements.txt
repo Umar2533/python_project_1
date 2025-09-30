@@ -1,5 +1,5 @@
 streamlit
-pypdf==5.1.0
+git+https://github.com/py-pdf/pypdf
 
 
 
