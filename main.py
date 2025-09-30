@@ -54,7 +54,7 @@ uploaded_file = st.file_uploader("Upload your PDF", type=["pdf"])
 
 if uploaded_file is not None:
     # Extract text
-    reader = PyPDF2.PdfReader(uploaded_file)
+    reader = pypdf.PdfReader(uploaded_file)
     text = ""
     for page in reader.pages:
         if page.extract_text():
@@ -83,5 +83,6 @@ if uploaded_file is not None:
 #     import uvicorn
 
 #     uvicorn.run("main:app", host="127.0.0.1", port=8001, reload=True)
+
 
 
